@@ -1,0 +1,11 @@
+#!/bin/bash
+
+PACKAGE_NAME=$1
+git clone http://$USER@stash.corp.alleninstitute.org/scm/~nicholasc/template_package.git .template_package
+
+if [[ $? -ne 0 ]] ; then
+    exit 1
+fi
+
+mv .template_package $PACKAGE_NAME
+mv $PACKAGE_NAME/template_package $PACKAGE_NAME/$PACKAGE_NAME

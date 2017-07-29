@@ -1,0 +1,3 @@
+sleep .2
+i3-msg 'floating toggle' > /dev/null
+zsh

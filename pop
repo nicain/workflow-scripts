@@ -1,0 +1,2 @@
+i3-msg "move window to workspace $1" > /dev/null
+i3-msg "workspace $1" > /dev/null

@@ -1,0 +1,2 @@
+atm ~/settings > /dev/null 2>&1 &
+i3-msg 'workspace atom;layout tabbed' > /dev/null
