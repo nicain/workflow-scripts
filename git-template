@@ -9,3 +9,6 @@ fi
 
 mv .template_package $PACKAGE_NAME
 mv $PACKAGE_NAME/template_package $PACKAGE_NAME/$PACKAGE_NAME
+cd $PACKAGE_NAME
+rm -rf .git
+git init
