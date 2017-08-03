@@ -1,0 +1,19 @@
+CURRDIR=`pwd`
+
+if [ -d $1 ]; then
+   echo "Directory $1 already exists. Exiting..."
+   exit 0
+fi
+
+cd /home/nicholasc/.cookiecutters/cookiecutter-pypackage
+
+
+git checkout $1
+[ $? -ne 0 ] && git checkout -b $1
+
+python prepare_config.py --project_name=$1
+git add cookiecutter.json
+git commit -m "created json file for project $1"
+
+cd $CURRDIR
+cookiecutter --no-input cookiecutter-pypackage
