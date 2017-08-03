@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then
+    ADDPATH=`pwd`
+else
+
+    ADDPATH=`realpath $1`
+
+    if ! [[ -d $ADDPATH ]] ; then
+        echo "$ADDPATH" not found
+        exit 1
+    fi
+
+fi
+
+INSERT_ME="export PYTHONPATH="'$PYTHONPATH':$ADDPATH
+echo $INSERT_ME >> ~/.python_path_config
